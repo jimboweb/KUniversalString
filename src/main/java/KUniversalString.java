@@ -24,9 +24,10 @@ public class KUniversalString {
                 char nextChar = (i & 1 << j) >> j == 1 ? '1' : '0';
                 nextString+=nextChar;
             }
+            //System.out.println(nextString);
             strings.add(nextString);
-            return strings;
         }
+        return strings;
     }
 
     private int getInput(){
