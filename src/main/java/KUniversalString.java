@@ -6,32 +6,29 @@ public class KUniversalString {
         int k = getInput();
         List<String> binaryStrings = createBinaryStrings(k);
         List<DeBruijnNode> nodes = makeDeBruijnGraph(binaryStrings, k);
+        List<DeBruijnNode> contigGraph = makeContigGraph(nodes);
     }
 
-    private List<DeBruijnNode> makeDeBruijnGraph(List<String> binaryStrings, int k){
+    private List<DeBruijnNode> makeDeBruijnGraph(List<String> edges, int k){
         List<DeBruijnNode> nodes = new ArrayList<>();
         List<String> kMerOverlaps = createBinaryStrings(k-1);
         for(int i=0;i<kMerOverlaps.size();i++){
             nodes.add(new DeBruijnNode(i,kMerOverlaps.get(i)));
         }
-
-        //this is too slow because 2^14^2 = like 270 billion
-        //I'm gonna have to search with the edges
-        for(int i=0;i<binaryStrings.size();i++){
-            for(int j=0;j<binaryStrings.size();j++){
-                String prefixString = binaryStrings.get(i);
-                String suffixString = binaryStrings.get(j);
-                String prefixStringOl = prefixString.substring(1);
-                String sufficStringOL = suffixString.substring(0,suffixString.length()-2);
-                if(prefixStringOl.equals(sufficStringOL)){
-                    String suffixStringSuffix = suffixString.substring(1);
-                    int firstNodeIndex = Integer.parseInt(sufficStringOL, 2);
-                    int secondNodeIndes = Integer.parseInt(suffixStringSuffix,2);
-
-                }
-            }
+        for(String edge:edges){
+            //this works because the node's integer index is equal to its binary value
+            int prefix = Integer.parseInt(edge.substring(0,edge.length()-1), 2);
+            DeBruijnNode from = nodes.get(prefix);
+            int suffix = Integer.parseInt(edge.substring(1), 2);
+            DeBruijnNode to = nodes.get(suffix);
+            from.pushConnectedNode(to.index);
+            //add incoming node here if useful
         }
         return nodes;
+    }
+
+    private List<DeBruijnNode> makeContigGraph(List<DeBruijnNode> nodes){
+        return null;
     }
 
     private List<String> createBinaryStrings(int k) {
@@ -53,6 +50,7 @@ public class KUniversalString {
         int index;
         String str;
         Deque<Integer> connectedNodes;
+        //list of incoming nodes?
 
         public DeBruijnNode(int index, String str) {
             this.index = index;
@@ -66,6 +64,15 @@ public class KUniversalString {
 
         public Integer popConnectedNode(){
             return connectedNodes.pollLast();
+        }
+
+        @Override
+        public String toString() {
+            String rtrn = "Node {";
+            rtrn += "Index: " + index;
+            rtrn += " String: " + str;
+            rtrn += " " + connectedNodes.size() + " connected nodes";
+            return rtrn;
         }
     }
     public static void main(String[] args){
