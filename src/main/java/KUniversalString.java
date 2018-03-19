@@ -6,27 +6,21 @@ public class KUniversalString {
         int k = getInput();
         List<String> binaryStrings = createBinaryStrings(k);
         List<DeBruijnNode> nodes = createNodes(binaryStrings,k);
-        List<DeBruijnEdge> edges = createEdges(binaryStrings,nodes);
-        Deque<Integer> circuit = makeEulerianCircuit(edges,nodes.size());
+        Deque<Integer> circuit = makeEulerianCircuit(nodes,nodes.size());
+        String kUniversalString = composeKuinversalString(circuit,nodes);
+        //kUniversalString = removeCircularCharacters(kUniversalString);
+        System.out.println(kUniversalString);
     }
 
-
-
-    private List<DeBruijnEdge> createEdges(List<String> binaryStrings, List<DeBruijnNode> nodes){
-        List<DeBruijnEdge> edges = new ArrayList<>(binaryStrings.size());
-        for (int i = 0; i < binaryStrings.size(); i++) {
-            edges.add(new DeBruijnEdge(i,binaryStrings.get(i)));
+    private String composeKuinversalString(Deque<Integer> circuit, List<DeBruijnNode> nodes){
+        String rtrn = nodes.get(circuit.pollLast()).str;
+        while(circuit.size()>2){
+            DeBruijnNode nextNode = nodes.get(circuit.pollLast());
+            String nextStr = nextNode.str;
+            rtrn += nextStr.charAt(nextStr.length()-1);
         }
-        for(DeBruijnNode node:nodes){
-            for(Integer incoming:node.getIncomingEdges()){
-                for(Integer outgoing:node.getOutgoingEdges()){
-                    edges.get(incoming).addConnectingEdge(outgoing);
-                }
-            }
-        }
-        return edges;
+        return rtrn;
     }
-
 
     private List<DeBruijnNode> createNodes(List<String> binaryStrings, int k){
         List<DeBruijnNode> nodes = new ArrayList<>(1<<(k-1));
@@ -42,13 +36,13 @@ public class KUniversalString {
         for(int i=0;i<binaryStrings.size();i++){
             String binaryString = binaryStrings.get(i);//this works because the node's integer index is equal to its binary value
             int prefix = Integer.parseInt(binaryString.substring(0,binaryString.length()-1), 2);
-            nodes.get(prefix).addOutgoingEdge(i);
+            DeBruijnNode from = nodes.get(prefix);
             int suffix = Integer.parseInt(binaryString.substring(1), 2);
-            nodes.get(suffix).addIncomingEdge(i);
+            DeBruijnNode to = nodes.get(suffix);
+            from.pushConnectedNode(to.index);
         }
         return nodes;
     }
-
 
     private List<String> createBinaryStrings(int k) {
         int numStrings = 1<<k;
@@ -68,14 +62,12 @@ public class KUniversalString {
     private class DeBruijnNode {
         private final int index;
         private final String str;
-        private List<Integer> outgoingEdges;
-        private List<Integer> incomingEdges;
+        private Deque<Integer> connectedNodes;
 
         public DeBruijnNode(int index, String str) {
             this.index = index;
             this.str = str;
-            outgoingEdges = new ArrayList<>();
-            incomingEdges = new ArrayList<>();
+            connectedNodes = new ArrayDeque<>();
         }
 
         public int getIndex() {
@@ -86,20 +78,25 @@ public class KUniversalString {
             return str;
         }
 
-        public void addIncomingEdge(int e){
-            incomingEdges.add(e);
-        }
 
         public void addOutgoingEdge(int e){
-            outgoingEdges.add(e);
+            connectedNodes.add(e);
         }
 
-        public List<Integer> getOutgoingEdges() {
-            return outgoingEdges;
+        public void pushConnectedNode(Integer n){
+            connectedNodes.push(n);
         }
 
-        public List<Integer> getIncomingEdges() {
-            return incomingEdges;
+        public Integer popConnectedNode(){
+            return connectedNodes.pop();
+        }
+
+        public int size(){
+            return connectedNodes.size();
+        }
+
+        public boolean isEmpty(){
+            return connectedNodes.isEmpty();
         }
 
         @Override
@@ -107,40 +104,9 @@ public class KUniversalString {
             String rtrn = "Node {";
             rtrn += "Index: " + index;
             rtrn += " String: " + str;
-            rtrn += " " + outgoingEdges.size() + " connected nodes";
+            rtrn += " " + connectedNodes.size() + " connected nodes";
             return rtrn;
         }
-    }
-
-    private class DeBruijnEdge{
-        Deque<Integer> connectingEdges = new ArrayDeque<>();
-        final int index;
-        final String str;
-        public  DeBruijnEdge(int index, String str){
-            this.index = index;
-            this.str = str;
-        }
-
-        public int getIndex() {
-            return index;
-        }
-
-        public String getStr() {
-            return str;
-        }
-
-        public void addConnectingEdge(Integer edge){
-            connectingEdges.push(edge);
-        }
-
-        public Integer pop(){
-            return connectingEdges.pop();
-        }
-
-        public int size(){
-            return connectingEdges.size();
-        }
-
     }
 
     public static void main(String[] args){
@@ -155,11 +121,11 @@ public class KUniversalString {
         return scanner.nextInt();
     }
 
-    Deque<Integer> makeEulerianCircuit(List<DeBruijnEdge> edges, int numberOfNodes)
+    Deque<Integer> makeEulerianCircuit(List<DeBruijnNode> nodes, int numberOfNodes)
     {
 
         // return empty list for empty graph
-        if (edges.size()==0)
+        if (nodes.size()==0)
             return new ArrayDeque<>();
 
         // Stack for the path in the current iteration
@@ -174,11 +140,11 @@ public class KUniversalString {
 
         while (!currentPath.isEmpty())
         {
-            //if there are outgoing edges
-            if (edges.get(currentVertexNumber).size() > 0)
+            //if there are outgoing nodes
+            if (nodes.get(currentVertexNumber).size() > 0)
             {
                 currentPath.push(currentVertexNumber);
-                currentVertexNumber = edges.get(currentVertexNumber).pop();
+                currentVertexNumber = nodes.get(currentVertexNumber).popConnectedNode();
             }
 
             // otherwise step back
@@ -188,10 +154,15 @@ public class KUniversalString {
                 currentVertexNumber = currentPath.pop();
             }
         }
-        //FIXME: it's returning each mini-circuit twice. 
         return circuit;
 
     }
 
+    private String removeCircularCharacters(String str){
+        while(str.charAt(str.length()-1) ==str.charAt(0)){
+            str = str.substring(0,str.length()-1);
+        }
+        return str;
+    }
 
 }

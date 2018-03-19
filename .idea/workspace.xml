@@ -24,38 +24,31 @@
       <file leaf-file-name="KUniversalString.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/KUniversalString.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="190" column="57" lean-forward="false" selection-start-line="190" selection-start-column="57" selection-end-line="190" selection-end-column="57" />
+            <state relative-caret-position="240">
+              <caret line="16" column="30" lean-forward="false" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
               <folding>
-                <element signature="method#createEdges#0;class#KUniversalString#0" expanded="false" />
                 <element signature="method#createNodes#0;class#KUniversalString#0" expanded="false" />
                 <element signature="method#populateDeBruijnNodes#0;class#KUniversalString#0" expanded="false" />
                 <element signature="method#createBinaryStrings#0;class#KUniversalString#0" expanded="false" />
                 <element signature="class#DeBruijnNode#0;class#KUniversalString#0" expanded="false" />
-                <element signature="e#2965#2966#0" expanded="true" />
-                <element signature="e#3001#3002#0" expanded="true" />
-                <element signature="e#3035#3036#0" expanded="true" />
-                <element signature="e#3069#3070#0" expanded="true" />
-                <element signature="e#3114#3115#0" expanded="true" />
-                <element signature="e#3158#3159#0" expanded="true" />
-                <element signature="e#3203#3204#0" expanded="true" />
-                <element signature="e#3247#3248#0" expanded="true" />
-                <element signature="e#3298#3299#0" expanded="true" />
-                <element signature="e#3342#3343#0" expanded="true" />
-                <element signature="e#3393#3394#0" expanded="true" />
-                <element signature="e#3437#3438#0" expanded="true" />
-                <element signature="e#4016#4017#0" expanded="true" />
-                <element signature="e#4052#4053#0" expanded="true" />
-                <element signature="e#4086#4087#0" expanded="true" />
-                <element signature="e#4120#4121#0" expanded="true" />
-                <element signature="e#4174#4175#0" expanded="true" />
-                <element signature="e#4224#4225#0" expanded="true" />
-                <element signature="e#4255#4256#0" expanded="true" />
-                <element signature="e#4307#4308#0" expanded="true" />
-                <element signature="e#4335#4336#0" expanded="true" />
-                <element signature="e#4388#4389#0" expanded="true" />
+                <element signature="e#2827#2828#0" expanded="true" />
+                <element signature="e#2863#2864#0" expanded="true" />
+                <element signature="e#2897#2898#0" expanded="true" />
+                <element signature="e#2931#2932#0" expanded="true" />
+                <element signature="e#2977#2978#0" expanded="true" />
+                <element signature="e#3022#3023#0" expanded="true" />
+                <element signature="e#3073#3074#0" expanded="true" />
+                <element signature="e#3119#3120#0" expanded="true" />
+                <element signature="e#3163#3164#0" expanded="true" />
+                <element signature="e#3214#3215#0" expanded="true" />
+                <element signature="e#3242#3243#0" expanded="true" />
+                <element signature="e#3294#3295#0" expanded="true" />
+                <element signature="e#3329#3330#0" expanded="true" />
+                <element signature="e#3384#3385#0" expanded="true" />
                 <element signature="method#main#0;class#KUniversalString#0" expanded="false" />
                 <element signature="method#getInput#0;class#KUniversalString#0" expanded="false" />
+                <element signature="method#makeEulerianCircuit#0;class#KUniversalString#0" expanded="false" />
+                <element signature="method#removeCircularCharacters#0;class#KUniversalString#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -558,16 +551,15 @@
       <option name="presentableId" value="Default" />
       <updated>1521143636564</updated>
       <workItem from="1521143640777" duration="1374000" />
-      <workItem from="1521204112114" duration="17414000" />
+      <workItem from="1521204112114" duration="22052000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18788000" />
+    <option name="totallyTimeSpent" value="23426000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="83" y="78" width="1375" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -590,7 +582,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -608,21 +600,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/KUniversalString.java</url>
-          <line>191</line>
-          <properties />
-          <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/KUniversalString.java</url>
-          <line>161</line>
-          <properties />
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="15" />
+      <option name="time" value="22" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -632,73 +610,59 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#createEdges#0;class#KUniversalString#0" expanded="false" />
             <element signature="method#createNodes#0;class#KUniversalString#0" expanded="false" />
             <element signature="method#populateDeBruijnNodes#0;class#KUniversalString#0" expanded="false" />
             <element signature="method#createBinaryStrings#0;class#KUniversalString#0" expanded="false" />
             <element signature="class#DeBruijnNode#0;class#KUniversalString#0" expanded="false" />
-            <element signature="e#2965#2966#0" expanded="true" />
-            <element signature="e#3001#3002#0" expanded="true" />
-            <element signature="e#3035#3036#0" expanded="true" />
-            <element signature="e#3069#3070#0" expanded="true" />
-            <element signature="e#3114#3115#0" expanded="true" />
-            <element signature="e#3158#3159#0" expanded="true" />
-            <element signature="e#3203#3204#0" expanded="true" />
-            <element signature="e#3247#3248#0" expanded="true" />
-            <element signature="e#3298#3299#0" expanded="true" />
-            <element signature="e#3342#3343#0" expanded="true" />
-            <element signature="e#3393#3394#0" expanded="true" />
-            <element signature="e#3437#3438#0" expanded="true" />
-            <element signature="e#4016#4017#0" expanded="true" />
-            <element signature="e#4052#4053#0" expanded="true" />
-            <element signature="e#4086#4087#0" expanded="true" />
-            <element signature="e#4120#4121#0" expanded="true" />
-            <element signature="e#4174#4175#0" expanded="true" />
-            <element signature="e#4224#4225#0" expanded="true" />
-            <element signature="e#4255#4256#0" expanded="true" />
-            <element signature="e#4307#4308#0" expanded="true" />
-            <element signature="e#4335#4336#0" expanded="true" />
-            <element signature="e#4388#4389#0" expanded="true" />
+            <element signature="e#2827#2828#0" expanded="true" />
+            <element signature="e#2863#2864#0" expanded="true" />
+            <element signature="e#2897#2898#0" expanded="true" />
+            <element signature="e#2931#2932#0" expanded="true" />
+            <element signature="e#2977#2978#0" expanded="true" />
+            <element signature="e#3022#3023#0" expanded="true" />
+            <element signature="e#3073#3074#0" expanded="true" />
+            <element signature="e#3119#3120#0" expanded="true" />
+            <element signature="e#3163#3164#0" expanded="true" />
+            <element signature="e#3214#3215#0" expanded="true" />
+            <element signature="e#3242#3243#0" expanded="true" />
+            <element signature="e#3294#3295#0" expanded="true" />
+            <element signature="e#3329#3330#0" expanded="true" />
+            <element signature="e#3384#3385#0" expanded="true" />
             <element signature="method#main#0;class#KUniversalString#0" expanded="false" />
             <element signature="method#getInput#0;class#KUniversalString#0" expanded="false" />
+            <element signature="method#makeEulerianCircuit#0;class#KUniversalString#0" expanded="false" />
+            <element signature="method#removeCircularCharacters#0;class#KUniversalString#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/KUniversalString.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="190" column="57" lean-forward="false" selection-start-line="190" selection-start-column="57" selection-end-line="190" selection-end-column="57" />
+        <state relative-caret-position="240">
+          <caret line="16" column="30" lean-forward="false" selection-start-line="16" selection-start-column="30" selection-end-line="16" selection-end-column="30" />
           <folding>
-            <element signature="method#createEdges#0;class#KUniversalString#0" expanded="false" />
             <element signature="method#createNodes#0;class#KUniversalString#0" expanded="false" />
             <element signature="method#populateDeBruijnNodes#0;class#KUniversalString#0" expanded="false" />
             <element signature="method#createBinaryStrings#0;class#KUniversalString#0" expanded="false" />
             <element signature="class#DeBruijnNode#0;class#KUniversalString#0" expanded="false" />
-            <element signature="e#2965#2966#0" expanded="true" />
-            <element signature="e#3001#3002#0" expanded="true" />
-            <element signature="e#3035#3036#0" expanded="true" />
-            <element signature="e#3069#3070#0" expanded="true" />
-            <element signature="e#3114#3115#0" expanded="true" />
-            <element signature="e#3158#3159#0" expanded="true" />
-            <element signature="e#3203#3204#0" expanded="true" />
-            <element signature="e#3247#3248#0" expanded="true" />
-            <element signature="e#3298#3299#0" expanded="true" />
-            <element signature="e#3342#3343#0" expanded="true" />
-            <element signature="e#3393#3394#0" expanded="true" />
-            <element signature="e#3437#3438#0" expanded="true" />
-            <element signature="e#4016#4017#0" expanded="true" />
-            <element signature="e#4052#4053#0" expanded="true" />
-            <element signature="e#4086#4087#0" expanded="true" />
-            <element signature="e#4120#4121#0" expanded="true" />
-            <element signature="e#4174#4175#0" expanded="true" />
-            <element signature="e#4224#4225#0" expanded="true" />
-            <element signature="e#4255#4256#0" expanded="true" />
-            <element signature="e#4307#4308#0" expanded="true" />
-            <element signature="e#4335#4336#0" expanded="true" />
-            <element signature="e#4388#4389#0" expanded="true" />
+            <element signature="e#2827#2828#0" expanded="true" />
+            <element signature="e#2863#2864#0" expanded="true" />
+            <element signature="e#2897#2898#0" expanded="true" />
+            <element signature="e#2931#2932#0" expanded="true" />
+            <element signature="e#2977#2978#0" expanded="true" />
+            <element signature="e#3022#3023#0" expanded="true" />
+            <element signature="e#3073#3074#0" expanded="true" />
+            <element signature="e#3119#3120#0" expanded="true" />
+            <element signature="e#3163#3164#0" expanded="true" />
+            <element signature="e#3214#3215#0" expanded="true" />
+            <element signature="e#3242#3243#0" expanded="true" />
+            <element signature="e#3294#3295#0" expanded="true" />
+            <element signature="e#3329#3330#0" expanded="true" />
+            <element signature="e#3384#3385#0" expanded="true" />
             <element signature="method#main#0;class#KUniversalString#0" expanded="false" />
             <element signature="method#getInput#0;class#KUniversalString#0" expanded="false" />
+            <element signature="method#makeEulerianCircuit#0;class#KUniversalString#0" expanded="false" />
+            <element signature="method#removeCircularCharacters#0;class#KUniversalString#0" expanded="false" />
           </folding>
         </state>
       </provider>
